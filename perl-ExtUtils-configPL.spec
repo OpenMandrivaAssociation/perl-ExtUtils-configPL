@@ -15,6 +15,7 @@ Url:		http://search.cpan.org/dist/%{module}
 BuildRequires:	perl-devel
 %endif
 BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module is used to add configuration information to a perl script, and is
