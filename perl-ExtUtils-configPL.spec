@@ -1,7 +1,7 @@
 %define module	ExtUtils-configPL
 %define name	perl-%{module}
 %define version	1.1
-%define release	%mkrel 8
+%define release	%mkrel 9
 
 Name:		%{name}
 Version:	%{version}
