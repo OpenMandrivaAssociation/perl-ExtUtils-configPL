@@ -1,21 +1,22 @@
-%define module	ExtUtils-configPL
-%define name	perl-%{module}
-%define version	1.1
-%define release	%mkrel 9
+%define upstream_name	 ExtUtils-configPL
+%define upstream_version 1.1
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Perl extension to automagiclly configure perl scripts 
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source:		http://search.cpan.org/CPAN/authors/id/P/PE/PEASE/%{module}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{module}
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/P/PE/PEASE/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
+
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module is used to add configuration information to a perl script, and is
@@ -26,15 +27,15 @@ functionality to your script, but it filters the script, replacing tags with
 items from the Config module, writing the resulting script to a new file.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 # parallel build is broken!
-make
+%make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -48,4 +49,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/ExtUtils
 %{_mandir}/*/*
-
