@@ -1,13 +1,14 @@
 %define upstream_name	 ExtUtils-configPL
+%define upstream_version 1.1
 Name:		perl-%{upstream_name}
 Version:	1.1
-Release:	6
+Release:	1
 
 Summary:	Perl extension to automagiclly configure perl scripts 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/ExtUtils-configPL
-Source0:	https://cpan.metacpan.org/authors/id/P/PE/PEASE/ExtUtils-configPL-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/P/PE/PEASE/ExtUtils-configPL-1.1.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -40,43 +41,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{perl_vendorlib}/ExtUtils
 %{_mandir}/*/*
 
-
-%changelog
-* Fri Feb 12 2010 Jérôme Quelin <jquelin@mandriva.org> 1.100.0-1mdv2010.1
-+ Revision: 504817
-- rebuild using %1.1 Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.1-9mdv2010.0
-+ Revision: 430432
-- rebuild
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 1.1-8mdv2009.0
-+ Revision: 256818
-- rebuild
-
-* Thu Dec 20 2007 Olivier Blin <oblin@mandriva.com> 1.1-6mdv2008.1
-+ Revision: 135841
-- restore BuildRoot
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - kill re-definition of %%buildroot on Pixel's request
-
-* Sat Sep 15 2007 Guillaume Rousse <guillomovitch@mandriva.org> 1.1-6mdv2008.0
-+ Revision: 86358
-- rebuild
-
-
-* Thu Aug 31 2006 Guillaume Rousse <guillomovitch@mandriva.org> 1.1-5mdv2007.0
-- Rebuild
-
-* Fri Dec 16 2005 Guillaume Rousse <guillomovitch@mandriva.org> 1.1-4mdk
-- spec cleanup
-- %%mkrel
-
-* Wed Dec 15 2004 Guillaume Rousse <guillomovitch@mandrake.org> 1.1-3mdk 
-- fix buildrequires in a backward compatible way
-
-* Mon Nov 29 2004 Guillaume Rousse <guillomovitch@mandrake.org> 1.1-2mdk 
-- fix buildrequires
-
-* Tue Nov 23 2004 Guillaume Rousse <guillomovitch@mandrake.org> 1.1-1mdk 
-- first mdk release
 
