@@ -2,7 +2,7 @@
 %define upstream_version 1.1
 Name:		perl-%{upstream_name}
 Version:	1.1
-Release:	1
+Release:	2
 
 Summary:	Perl extension to automagiclly configure perl scripts 
 License:	GPL+ or Artistic
