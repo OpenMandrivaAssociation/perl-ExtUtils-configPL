@@ -2,7 +2,7 @@
 %define upstream_version 1.1
 Name:		perl-%{upstream_name}
 Version:	1.1
-Release:	3
+Release:	4
 
 Summary:	Perl extension to automagiclly configure perl scripts 
 License:	GPL+ or Artistic
@@ -33,6 +33,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %check
 # soft: do not fail package on test failures
 set +e
+make test || :
 %make test || :
 
 %install
